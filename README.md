@@ -5,7 +5,7 @@
 
 * [How to Open]
 * [Instructions]
-* [Contributing]
+* [Contributions]
 
 ## How to Open
 
@@ -19,9 +19,9 @@ Each tile is paired with another tile randomly shuffled at the beginning of the 
 
 To win, match all 8 sets of quarterfinalists from the 2018 Champions League.
 
-Try multiple time to see if you can increase your trophy level + beat the high score!
+Try multiple times to see if you can increase your trophy level + beat the high score!
 
-## Contributing
+## Contributions
 
   - Box shuffle logic via https://stackoverflow.com/questions/2450954
   (#contributing)

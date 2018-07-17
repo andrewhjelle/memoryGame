@@ -63,8 +63,10 @@ h1 {
 
 .trophies > img {
     width: 33%;
-    max-height: 4em;
-    max-width: 5em;
+    max-height: 5em;
+    max-width: 6em;
+    padding-right: .6em;
+    padding-left: 1em;
 }
 
 .trophydesc > p {
@@ -121,11 +123,11 @@ h1 {
 .matched   {
     animation: matchedA 0.7s;
     background-color: rgb(82, 190, 128);
-    cursor: default;
+    pointer-events: none;
 }
 
 .nomatch   {
-    cursor: default;
+    pointer-events: none;
     animation: nomatchA 1s;
     background: rgb(220, 118, 51);
 }
@@ -153,8 +155,11 @@ h1 {
 }
 
 .mtrophies > img {
-    max-height: 20em;
-    max-width: 15em;
+    width: 100%;
+    max-height: 15em;
+    max-width: 10em;
+    padding-right: .6em;
+    padding-left: 1em;
 }
 
 /* The Close Button  */

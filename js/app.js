@@ -12,13 +12,13 @@ var origBox;
 var newBox;
 var boxNum;
 var matchedCount;
-var clickCount = 1;
+var clickCount = 0;
 //var score = 0;
 //var img = document.createElement("IMG");
 var start = new Date;
 var trophyWinLevel;
 var trophyNames = ["D3", "Championship", "Premier"];
-var trophyLevels = [40,30,25];
+var trophyLevels = [40,35,25];
 var trophyLevelsText = [trophyLevels[1] + "+", "<" + trophyLevels[1],"<" + trophyLevels[2]];
 var highScore = 30;
 var highScore = localStorage.getItem("highscore");
@@ -90,11 +90,11 @@ function close(){
     boxState.splice(boxNum, 1, "Closed");
     
     // Hide card
-    hide(boxNum);
+    hide(boxNum, clickedBoxVal);
     
     // Update counts
     clickedBoxVal = "";
-    clickCount++;
+    
 };
 
 function match(){
@@ -118,11 +118,11 @@ function match(){
 };
 
 function noMatch(){
-    // Update score
-    //score();
+    $(".boxsection").find("div").off("click", clicker);
     
     // "No Match" animation
     setTimeout(function time() {
+        //$(".boxsection").find("div").off("click", clicker);
         newBox.addClass("nomatch").removeClass("opened");
         oldBox.addClass("nomatch").removeClass("opened");
     }, 400);
@@ -133,11 +133,12 @@ function noMatch(){
         oldBox.addClass("closed").removeClass("nomatch opened");
         hide(boxNum, clickedBoxVal);
         hide(oldBoxNum, oldClickedBoxVal);
-    }, 1300);
         
-    // Update which boxes are "Closed" in the array
-    boxState.splice(clickedBoxPlc, 1, "Closed");
-    boxState.splice(oldClickedBoxPlc, 1, "Closed");    
+        // Update which boxes are "Closed" in the array
+        boxState.splice(clickedBoxPlc, 1, "Closed");
+        boxState.splice(oldClickedBoxPlc, 1, "Closed");
+        $(".boxsection").find("div").on("click",clicker);  
+    }, 1300);
 };
 
 function win(){
@@ -176,11 +177,11 @@ $(".closewinbox").click(function () {
 });
 
 // On Box click
-$(".boxsection").find("div").click(function () {
+
+function clicker() {
     newBox = $(this);
     boxNum = parseInt($(this).attr("class"));
-    $(".clicks").text("Total Clicks: " + clickCount);
-    $(".mclicks").text("Total Clicks: " + clickCount);
+
     
     // Highscore advice via https://stackoverflow.com/questions/29370017/adding-a-high-score-to-local-storage
     if(highScore !== null){
@@ -244,4 +245,9 @@ $(".boxsection").find("div").click(function () {
        // Then trigger error alert
        alert("Error - please restart the game."); 
     }
-});
+    
+    $(".clicks").text("Total Clicks: " + clickCount);
+    $(".mclicks").text("Total Clicks: " + clickCount);
+};
+
+$(".boxsection").find("div").on("click",clicker);
