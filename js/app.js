@@ -31,7 +31,7 @@ boxVal.sort(() => Math.random() * 2 - 1);
 
 // Create html boxes for cards: Club logos via http://www.stickpng.com/
 // Trophy logo By Jarke, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=2065872
-for (var boxes = 0; boxes < boxesCount; boxes++) {
+for (let boxes = 0; boxes < boxesCount; boxes++) {
     $("<div class =" + boxes + "><img class=Img"+ boxes + "-" + boxVal[boxes] +" src=img/trophy.png></div>").appendTo($(".boxsection"));
     boxState.push("Closed");
 };
@@ -40,10 +40,10 @@ for (var boxes = 0; boxes < boxesCount; boxes++) {
 $(".boxsection").find("div").addClass("closed");
 
 // Create high score
-$("</br><div class=highScore>Fewest Clicks Ever: "+ highScore + "</div></br>").insertAfter($(".clicks"));
+$("<div class=highScore>Fewest Clicks Ever: "+ highScore + "</div>").insertAfter($(".clicks"));
 
 // Create html boxes for trophy tally
-for (var trophies = 0; trophies < 3; trophies++) {
+for (let trophies = 0; trophies < 3; trophies++) {
     $("<img class =img" + trophyNames[trophies] +  " src=img/trophy-full.png>").appendTo($(".trophies"));
 
     $("<p class=p"+ trophyNames[trophies] + ">"+trophyNames[trophies]+"</br>" + trophyLevelsText[trophies] + " Clicks</p>").appendTo($(".trophydesc"));

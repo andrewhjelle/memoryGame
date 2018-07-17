@@ -14,64 +14,88 @@
 /*ELEMENTS*/
 button {
     cursor: pointer;
+    max-height: em;
+    height: 1%;
+    font-size: 2vmin;
+}
+
+h1 {
+    font-size: 2.5vmin;
 }
 
 .scorerow {
     display: flex;
     flex-flow: row wrap;
     border-radius: 0px;
+    align-items: center;
 }
 
 .scorepanel {
-    max-width: 100%;
-    min-width: 25%;
-    border-style: solid;    
+    min-width: 6em;
+    width: 40%;
+    max-width: 30em;
+    border-style: solid;
+    font-size: 1.8vmin;
+}
+
+.scorepanel > div {
+    font-size: 2.5vmin;
+    text-align: left;
+    margin-left: 10%;
+    height: 1.1em;
+    
 }
 
 .scoretally {    
-    max-width: 100%;
-    min-width: 25%;
+    min-width: 6em;
+    width: 40%;
+    max-width: 30em;
     border-style: solid;
-    max-height: 14em; 
+    font-size: 1.8vmin;    
 }
 
 .scoretally > div {
     margin: 0%;
     border: 0%;
     display: flex;
-    background: transparent;
-    max-height: 90%;
+    background: transparent;    
 }
 
 .trophies > img {
     width: 33%;
-    height: 1%;
-    max-height: 7em;
-    max-width: 7em;
+    max-height: 4em;
+    max-width: 5em;
 }
 
 .trophydesc > p {
     font-size: 80%;
     width: 100%;
-    max-width: 9em;    
+    max-height: 7em;
+    max-width: 7em;
+    font-size: 1.8vmin;
+    
 }
 
 .boxsection {
     /* Flex code inspired by http://www.sketchingwithcss.com/samplechapter/cheatsheet.html */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;    
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 70em;
+    max-width: 90em;
 }
 
 .boxsection > div {
-    height: 12em;
-    width: 15em;
+    width: 22%; 
 }
 
 .boxsection > div img {
-    padding: 8%;
-    background: transparent;
     max-height: 12em;
+    max-width: 10em;
+    padding-top: 7%;
+    background: transparent;
+    height: 90%;
+    width: 70%;
 }
 
 
