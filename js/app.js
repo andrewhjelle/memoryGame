@@ -61,7 +61,11 @@ function open(){
     oldBoxNum = clickedBoxPlc;
     oldClickedBoxPlc = clickedBoxPlc;
     clickedBoxPlc = boxNum;
-    clickCount++;
+    
+    // Only increment counter if box clicked is different than last clicked
+    if (oldBoxNum != boxNum){
+        clickCount++;
+    }    
     
     // Remember place of most last clicked box
     oldBox = origBox;
